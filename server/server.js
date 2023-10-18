@@ -20,6 +20,7 @@ const app = express();
 app.use(cors());
 const port = process.env.PORT || 4000;
 dotenv.config();
+const mongoURI = process.env.MONGO_URI;
 // Set up sessions, Passport for Google OAuth, and MongoDB connection
 app.use(session({ secret: 'V8LO6Kj8oM', resave: false, saveUninitialized: true }));
 app.use(passport.initialize());
@@ -27,7 +28,7 @@ app.use(passport.session());
 app.use(bodyParser.json());
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/myapp', {
+mongoose.connect(mongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
