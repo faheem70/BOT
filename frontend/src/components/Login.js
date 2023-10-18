@@ -67,10 +67,10 @@ const Login = () => {
                     <p>You are logged in as {user.email}</p>
                     <button onClick={handleLogout} style={buttonStyle}>Logout</button>
                     <span style={{ padding: '0 10px' }}></span>
-                    <a href='/subscription'><button style={buttonStyle}>Go For Subscribe</button></a>
+                    <a href='/#/subscription'><button style={buttonStyle}>Go For Subscribe</button></a>
                     {user.email === process.env.REACT_APP_EMAIL && (
                         <span style={{ padding: '0 10px' }}>
-                            <a href='/admin'><button style={buttonStyle}>Admin Dashboard</button></a>
+                            <a href='/#/admin'><button style={buttonStyle}>Admin Dashboard</button></a>
                         </span>
                     )}
                 </div>

@@ -31,10 +31,10 @@ function AdminDashboard() {
             <nav style={navStyle}>
                 <ul style={ulStyle}>
                     <li style={liStyle}>
-                        <a href="/userlist" style={linkStyle}>User Management</a>
+                        <a href="/#/userlist" style={linkStyle}>User Management</a>
                     </li>
                     <li style={liStyle}>
-                        <a href="/botsetting" style={linkStyle}>Bot Settings</a>
+                        <a href="/#/botsetting" style={linkStyle}>Bot Settings</a>
                     </li>
                 </ul>
             </nav>

@@ -12,29 +12,23 @@ function App() {
   const isAdmin = userMail === 'faheemakhtar19730@gmail.com';
 
   return (
-    <div>
-      <Routes>
-        {isAdmin ? (
-          <Route path="/admin" element={<AdminPanel />} />
-        ) : (
-          <Route path="/admin" element={<Navigate to="/" />} />
-        )}
-        <Route path="/" element={<Login />} />
-        <Route path='/usersubscription' element={<UserSubscription />} />
-        <Route path='/subscription' element={<Subscription />} />
-        <Route path='/userlist' element={<UserList />} />
-        <Route path='/botsetting' element={<BotSettings />} />
-      </Routes>
-    </div>
-  );
-}
-
-function MainApp() {
-  return (
-    <HashRouter>
-      <App />
+    <HashRouter> {/* Use HashRouter for all routes */}
+      <div>
+        <Routes>
+          {isAdmin ? (
+            <Route path="/admin" element={<AdminPanel />} />
+          ) : (
+            <Route path="/admin" element={<Navigate to="/" />} />
+          )}
+          <Route path="/" element={<Login />} />
+          <Route path='/usersubscription' element={<UserSubscription />} />
+          <Route path='/subscription' element={<Subscription />} />
+          <Route path='/userlist' element={<UserList />} />
+          <Route path='/botsetting' element={<BotSettings />} />
+        </Routes>
+      </div>
     </HashRouter>
   );
 }
 
-export default MainApp;
+export default App;
