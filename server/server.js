@@ -18,7 +18,6 @@ const cors = require('cors');
 
 const app = express();
 app.use(cors());
-const port = process.env.PORT || 4000;
 dotenv.config();
 const mongoURI = process.env.MONGO_URI;
 // Set up sessions, Passport for Google OAuth, and MongoDB connection
@@ -115,6 +114,7 @@ app.use(
     })
 );
 app.use("/auth", authRoute);
+const port = process.env.PORT
 // Start the Express server
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
