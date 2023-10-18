@@ -5,7 +5,7 @@ const UserSubscription = ({ userId, isSubscribed }) => {
     const [subscriptionStatus, setSubscriptionStatus] = useState(isSubscribed);
 
     const toggleSubscription = () => {
-        axios.post('http://localhost:4000/api/users/subscribe', { userId })
+        axios.post('https://bot-backend-sg1l.onrender.com/api/users/subscribe', { userId })
             .then((response) => {
                 setSubscriptionStatus(response.data.isSubscribed);
             })

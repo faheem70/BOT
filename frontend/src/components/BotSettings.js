@@ -7,14 +7,14 @@ function BotSettings() {
 
     useEffect(() => {
         // Fetch bot settings when the component mounts
-        fetch('http://localhost:4000/api/botsettings')
+        fetch('https://bot-backend-sg1l.onrender.com/api/botsettings')
             .then((response) => response.json())
             .then((data) => setBotSettings(data))
             .catch((error) => console.error(error));
     }, []);
 
     const updateBotSettings = () => {
-        fetch('http://localhost:4000/api/botsettings', {
+        fetch('https://bot-backend-sg1l.onrender.com/api/botsettings', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

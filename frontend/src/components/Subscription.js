@@ -16,7 +16,7 @@ const Subscription = () => {
         };
 
         try {
-            const response = await fetch('http://localhost:4000/api/subscribe', {
+            const response = await fetch('https://bot-backend-sg1l.onrender.com/api/subscribe', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -7,7 +7,7 @@ const UserList = () => {
         // Fetch all users when the component mounts
         const fetchUsers = async () => {
             try {
-                const response = await fetch('http://localhost:4000/api/getAllUsers', {
+                const response = await fetch('https://bot-backend-sg1l.onrender.com/api/getAllUsers', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',

@@ -8,7 +8,7 @@ const UserList = () => {
         // Fetch all users when the component mounts
         const fetchUsers = async () => {
             try {
-                const response = await fetch('http://localhost:4000/api/getAllUsers', {
+                const response = await fetch('https://bot-backend-sg1l.onrender.com/api/getAllUsers', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ const UserList = () => {
     }, [deletedUserId]);
     const handleBlockUser = async (userId) => {
         try {
-            const response = await fetch(`http://localhost:4000/api/blockUser/${userId}`, {
+            const response = await fetch(`https://bot-backend-sg1l.onrender.com/api/blockUser/${userId}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ const UserList = () => {
 
     const handleUnblockUser = async (userId) => {
         try {
-            const response = await fetch(`http://localhost:4000/api/unblockUser/${userId}`, {
+            const response = await fetch(`https://bot-backend-sg1l.onrender.com/unblockUser/${userId}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -82,7 +82,7 @@ const UserList = () => {
         }
     };
     const handleDeleteUser = (userId) => {
-        fetch(`http://localhost:4000/api/delete/${userId}`, {
+        fetch(`https://bot-backend-sg1l.onrender.com/api/delete/${userId}`, {
             method: 'DELETE'
         })
             .then((response) => {
