@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'; // Import Routes component
+import React from 'react';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom'; // Import HashRouter component
 import Login from './components/Login';
 import AdminPanel from './components/AdminPanel';
 import UserSubscription from './components/UserSubscription';
@@ -7,17 +7,17 @@ import Subscription from './components/Subscription';
 import UserList from './components/UserList';
 import BotSettings from './components/BotSettings';
 const userMail = 'faheemakhtar19730@gmail.com';
-function App() {
 
+function App() {
   const isAdmin = userMail === 'faheemakhtar19730@gmail.com';
+
   return (
-    <Router>
+    <Router> {/* Use HashRouter instead of BrowserRouter */}
       <div>
-        <Routes> {/* Wrap your Route components in a Routes component */}
+        <Routes>
           {isAdmin ? (
             <Route path="/admin" element={<AdminPanel />} />
           ) : (
-            // If not an admin, you can render a different component or navigate elsewhere
             <Route path="/admin" element={<Navigate to="/" />} />
           )}
           <Route path="/" element={<Login />} />
