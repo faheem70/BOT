@@ -46,6 +46,13 @@ BotSettings.findOne({})
         bot.on("message", async (msg) => {
             const chatId = msg.chat.id;
             const userInput = msg.text;
+            if (userInput.toLowerCase() === "hello") {
+                bot.sendMessage(chatId, "Hello! How can I assist you today?");
+            } else if (userInput.toLowerCase() === "how are you") {
+                bot.sendMessage(chatId, "I'm just a bot, but I'm here to help you!");
+            } else if (userInput.toLowerCase() === "what are you doing") {
+                bot.sendMessage(chatId, "I'm here to answer your questions and provide information.");
+            } else {
 
             try {
                 const response = await axios.get(
@@ -64,6 +71,7 @@ BotSettings.findOne({})
                 bot.sendMessage(chatId, message);
             } catch (error) {
                 bot.sendMessage(chatId, "City doesn't exist.");
+            }
             }
         });
 
