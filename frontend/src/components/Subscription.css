@@ -60,6 +60,11 @@ input {
     color: #007BFF;
     text-align: center;
 }
+.msg {
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+}
 
 @media (max-width: 768px) {
     .subscription-form {

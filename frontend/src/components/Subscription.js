@@ -90,7 +90,7 @@ const Subscription = () => {
                 </div>
                 <button className='submit-button' type="submit">Subscribe</button>
             </form>
-            <p>{message}</p>
+            <p className='msg'>{message}</p>
         </div>
     );
 };
