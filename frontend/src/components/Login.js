@@ -8,15 +8,52 @@ const loginContainerStyle = {
     alignItems: 'center',
     justifyContent: 'center',
     height: '100vh',
+    background: `url("https://www.sss-solutions.org/wp-content/uploads/2018/01/1116146294-login-page-background-image-112.jpg")`,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    color: 'white',
+};
+const boxContainerStyle = {
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    padding: '20px',
+    borderRadius: '10px',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
 };
 
 const buttonStyle = {
     padding: '10px 20px',
     fontSize: '16px',
-    backgroundColor: 'blue',
+    backgroundColor: '#FF5722', 
     color: 'white',
     border: 'none',
     cursor: 'pointer',
+    margin: '10px',
+    borderRadius: '5px',
+    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+    transition: 'background-color 0.3s',
+
+
+    ':hover': {
+        backgroundColor: '#E64A19',
+    },
+};
+
+const headerStyle = {
+    fontSize: '24px',
+    fontWeight: 'bold',
+    marginBottom: '20px',
+    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)', // Add a text shadow
+};
+
+const loggedInText = {
+    fontSize: '18px',
+    fontWeight: 'bold',
+    marginLeft: '10px',
+    marginBottom: '10px',
+    color: 'black'
 };
 
 const Login = () => {
@@ -61,10 +98,11 @@ const Login = () => {
     return (
 
         <div style={loginContainerStyle}>
-            <h1>Welcome to Telegram Bot</h1>
+            <div style={boxContainerStyle}>
+                <h1 style={headerStyle}>Welcome to Telegram Bot</h1>
             {user ? (
                 <div>
-                    <p>You are logged in as {user.email}</p>
+                        <p style={loggedInText}>You are logged in as {user.email}</p>
                     <button onClick={handleLogout} style={buttonStyle}>Logout</button>
                     <span style={{ padding: '0 10px' }}></span>
                     <a href='/#/subscription'><button style={buttonStyle}>Go For Subscribe</button></a>
@@ -87,6 +125,7 @@ const Login = () => {
                     />
                 </GoogleOAuthProvider>
             )}
+            </div>
         </div>
     );
 };

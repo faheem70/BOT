@@ -25,7 +25,7 @@ const Subscription = () => {
             });
 
             if (response.ok) {
-                setMessage('Subscription successful!'); // Display success message
+                setMessage('Subscription successful!'); 
 
                 // Fetch weather data again and update the message
                 const fetchData = async () => {

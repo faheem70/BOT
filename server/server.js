@@ -67,7 +67,7 @@ BotSettings.findOne({})
             }
         });
 
-        // Start your Express server
+
 
     })
     .catch((err) => {
@@ -83,9 +83,9 @@ const Subscription = mongoose.model('Subscription', {
 app.post('/api/subscribe', async (req, res) => {
     const { location, time } = req.body;
 
-    // Perform validation here if necessary
 
-    // Create a new subscription document and save it to the database
+
+
     const newSubscription = new Subscription({ location, time });
     try {
         await newSubscription.save();
@@ -94,7 +94,7 @@ app.post('/api/subscribe', async (req, res) => {
         res.status(500).json({ success: false, error: error.message });
     }
 });
-// Passport configuration
+
 
 
 

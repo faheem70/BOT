@@ -87,7 +87,7 @@ const UserList = () => {
         })
             .then((response) => {
                 if (response.status === 200) {
-                    setDeletedUserId(userId); // Trigger a re-fetch of the user list
+                    setDeletedUserId(userId); 
                 }
             })
             .catch((error) => console.error(error));
@@ -100,7 +100,8 @@ const UserList = () => {
             <ul className="user-list-items">
                 {users.map((user) => (
                     <li key={user._id} className="user-item">
-                        Username : {user.email}
+                        UserEmail : {user.email}
+                        <span style={{ padding: '0 5px' }}></span>
                         User ID: {user._id}
                         {user.blocked ? (
                             <button onClick={() => handleUnblockUser(user._id)}>Unblock User</button>
